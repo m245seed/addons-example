@@ -1,0 +1,24 @@
+---
+description: "Rules for add-on runtime (run.sh) and build image (Dockerfile)."
+globs:
+  - "moltbot_gateway/run.sh"
+  - "moltbot_gateway/Dockerfile"
+alwaysApply: false
+---
+
+## Principle
+- These files are **critical for stability/updates/snapshots**. Only change them with a clear justification and minimal scope.
+
+## run.sh
+- Do **not** remove or “simplify” update/rollback/snapshot logic unless you can prove behavior stays identical.
+- Keep signal handling (USR1/TERM/INT); treat restart loops intentionally.
+- Respect the persistent storage layout under `/config/moltbot` (data/cache/.meta/source).
+- Don’t break logging/formatting (logfile + jq formatting).
+
+## Dockerfile
+- Respect multi-arch requirements (`amd64`, `arm64/aarch64`, `armv7`).
+- Keep version pinning (ARGs for Node/Bun/pnpm/gog).
+- Avoid duplicate installs; keep the image small (apt cleanup).
+
+@moltbot_gateway/run.sh
+@moltbot_gateway/Dockerfile

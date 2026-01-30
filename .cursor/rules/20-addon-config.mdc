@@ -1,0 +1,22 @@
+---
+description: "Rules for add-on metadata/options (config.json) and repository metadata."
+globs:
+  - "moltbot_gateway/config.json"
+  - "repository.json"
+alwaysApply: false
+---
+
+## config.json (HA Add-on Manifest)
+- Keep `options` and `schema` **consistent**:
+  - New option → add a default in `options` + a matching `schema` entry.
+  - Remove/rename option → update both sides.
+- **No secrets as defaults** (leave tokens/keys empty; examples only as placeholders).
+- Preserve backwards compatibility (avoid breaking existing keys).
+- When options/schema change: update docs (`README.md`, `CONFIGURATION.md`, and if needed `INSTALLATION.md` / `TROUBLESHOOTING.md`).
+
+## repository.json
+- Keep minimal and ensure URL/maintainer are correct.
+- Only change when repo URL/name/maintainer actually changes.
+
+@moltbot_gateway/config.json
+@repository.json
