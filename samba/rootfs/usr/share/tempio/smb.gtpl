@@ -46,6 +46,19 @@
    delete veto files = {{ eq (len .veto_files) 0 | ternary "no" "yes" }}
 {{ end }}
 
+{{ if (has "homeassistant_src" .enabled_shares) }}
+[homeassistant_src]
+   browseable = yes
+   writeable = yes
+   path = /usr/src/homeassistant
+
+   valid users = {{ .username }}
+   force user = root
+   force group = root
+   veto files = /{{ .veto_files | join "/" }}/
+   delete veto files = {{ eq (len .veto_files) 0 | ternary "no" "yes" }}
+{{ end }}
+
 {{ if (has "addons" .enabled_shares) }}
 [addons]
    browseable = yes

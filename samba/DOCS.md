@@ -26,6 +26,7 @@ Directory | Description
 `addon_configs` | This is for the configuration files of your add-ons.
 `backup` | This is for your backups.
 `config` | This is for your Home Assistant configuration.
+`homeassistant_src` | This is for the Home Assistant source folder mounted at `/usr/src/homeassistant`.
 `media` | This is for local media files.
 `share` | This is for your data that is shared between add-ons and Home Assistant.
 `ssl` | This is for your SSL certificates.
@@ -44,6 +45,7 @@ enabled_shares:
   - addon_configs
   - backup
   - config
+  - homeassistant_src
   - media
   - share
   - ssl

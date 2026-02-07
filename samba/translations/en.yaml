@@ -17,7 +17,7 @@ configuration:
   enabled_shares:
     name: >-
       Enabled Shares - allowed values are:
-      addons, addon_configs, backup, config, media, share, or ssl.
+      addons, addon_configs, backup, config, homeassistant_src, media, root, share, or ssl.
     description: >-
       List of file shares to make available.
       Adding a share requires typing its name to add it.

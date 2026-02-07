@@ -1,5 +1,9 @@
 # Changelog
 
+## 12.5.5
+
+- Add `homeassistant_src` share support and enable it by default (`/usr/src/homeassistant`)
+
 ## 12.5.4
 
 - Fix invalid inverted commas in server signing parameter
